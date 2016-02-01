@@ -24,9 +24,10 @@ Partial Class frmLock
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnNew = New System.Windows.Forms.Button()
-        Me.PasswordLabel = New System.Windows.Forms.Label()
         Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.btnok = New System.Windows.Forms.Button()
+        Me.PasswordLabel = New System.Windows.Forms.Label()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -43,8 +44,9 @@ Partial Class frmLock
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnCancel)
         Me.GroupBox1.Controls.Add(Me.txtPassword)
-        Me.GroupBox1.Controls.Add(Me.btnNew)
+        Me.GroupBox1.Controls.Add(Me.btnok)
         Me.GroupBox1.Controls.Add(Me.PasswordLabel)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 11)
         Me.GroupBox1.Name = "GroupBox1"
@@ -52,40 +54,52 @@ Partial Class frmLock
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         '
-        'btnNew
+        'txtPassword
         '
-        Me.btnNew.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnNew.BackColor = System.Drawing.Color.Transparent
-        Me.btnNew.Font = New System.Drawing.Font("Bookman Old Style", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.Location = New System.Drawing.Point(296, 55)
-        Me.btnNew.Name = "btnNew"
-        Me.btnNew.Size = New System.Drawing.Size(65, 33)
-        Me.btnNew.TabIndex = 2
-        Me.btnNew.Text = "&OK"
-        Me.btnNew.UseVisualStyleBackColor = False
+        Me.txtPassword.Font = New System.Drawing.Font("Bookman Old Style", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.Location = New System.Drawing.Point(63, 51)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtPassword.Size = New System.Drawing.Size(291, 33)
+        Me.txtPassword.TabIndex = 1
+        Me.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'btnok
+        '
+        Me.btnok.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnok.BackColor = System.Drawing.Color.Transparent
+        Me.btnok.Font = New System.Drawing.Font("Bookman Old Style", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnok.Location = New System.Drawing.Point(63, 90)
+        Me.btnok.Name = "btnok"
+        Me.btnok.Size = New System.Drawing.Size(96, 33)
+        Me.btnok.TabIndex = 2
+        Me.btnok.Text = "&OK"
+        Me.btnok.UseVisualStyleBackColor = False
         '
         'PasswordLabel
         '
         Me.PasswordLabel.BackColor = System.Drawing.Color.Transparent
         Me.PasswordLabel.Font = New System.Drawing.Font("Bookman Old Style", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PasswordLabel.ForeColor = System.Drawing.Color.Black
-        Me.PasswordLabel.Location = New System.Drawing.Point(19, 14)
+        Me.PasswordLabel.Location = New System.Drawing.Point(58, 13)
         Me.PasswordLabel.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.PasswordLabel.Name = "PasswordLabel"
-        Me.PasswordLabel.Size = New System.Drawing.Size(367, 35)
+        Me.PasswordLabel.Size = New System.Drawing.Size(296, 35)
         Me.PasswordLabel.TabIndex = 2
         Me.PasswordLabel.Text = "Enter unlock key:"
         Me.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'txtPassword
+        'btnCancel
         '
-        Me.txtPassword.Font = New System.Drawing.Font("Bookman Old Style", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(24, 56)
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.Size = New System.Drawing.Size(266, 33)
-        Me.txtPassword.TabIndex = 1
-        Me.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnCancel.BackColor = System.Drawing.Color.Transparent
+        Me.btnCancel.Font = New System.Drawing.Font("Bookman Old Style", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.Location = New System.Drawing.Point(258, 90)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(96, 33)
+        Me.btnCancel.TabIndex = 3
+        Me.btnCancel.Text = "&Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = False
         '
         'frmLock
         '
@@ -106,6 +120,7 @@ Partial Class frmLock
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents PasswordLabel As System.Windows.Forms.Label
-    Friend WithEvents btnNew As System.Windows.Forms.Button
+    Friend WithEvents btnok As System.Windows.Forms.Button
     Friend WithEvents txtPassword As System.Windows.Forms.TextBox
+    Friend WithEvents btnCancel As System.Windows.Forms.Button
 End Class

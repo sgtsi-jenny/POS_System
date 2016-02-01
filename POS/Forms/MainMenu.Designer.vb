@@ -24,15 +24,15 @@ Partial Class MainMenu
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainMenu))
         Me.panelMain = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.pnl_main = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnReports = New System.Windows.Forms.Button()
         Me.btnUsers = New System.Windows.Forms.Button()
         Me.btnTransaction = New System.Windows.Forms.Button()
         Me.btnInventory = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.panelMain.SuspendLayout()
         Me.pnl_main.SuspendLayout()
         Me.SuspendLayout()
@@ -48,6 +48,19 @@ Partial Class MainMenu
         Me.panelMain.Name = "panelMain"
         Me.panelMain.Size = New System.Drawing.Size(786, 664)
         Me.panelMain.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(110, Byte), Integer))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Gold
+        Me.Label1.Location = New System.Drawing.Point(3, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(786, 54)
+        Me.Label1.TabIndex = 198
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'pnl_main
         '
@@ -77,32 +90,6 @@ Partial Class MainMenu
         Me.Label4.Size = New System.Drawing.Size(201, 54)
         Me.Label4.TabIndex = 197
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(110, Byte), Integer))
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Gold
-        Me.Label1.Location = New System.Drawing.Point(3, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(786, 54)
-        Me.Label1.TabIndex = 198
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(110, Byte), Integer))
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Gold
-        Me.Label2.Location = New System.Drawing.Point(-6, 1)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(985, 54)
-        Me.Label2.TabIndex = 199
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'btnLogout
         '
@@ -163,7 +150,7 @@ Partial Class MainMenu
         Me.btnTransaction.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnTransaction.ForeColor = System.Drawing.Color.Black
         Me.btnTransaction.Image = CType(resources.GetObject("btnTransaction.Image"), System.Drawing.Image)
-        Me.btnTransaction.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnTransaction.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnTransaction.Location = New System.Drawing.Point(14, 178)
         Me.btnTransaction.Name = "btnTransaction"
         Me.btnTransaction.Size = New System.Drawing.Size(178, 85)
@@ -188,6 +175,19 @@ Partial Class MainMenu
         Me.btnInventory.Text = "INVENTORY"
         Me.btnInventory.TextAlign = System.Drawing.ContentAlignment.TopRight
         Me.btnInventory.UseVisualStyleBackColor = False
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(110, Byte), Integer))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Gold
+        Me.Label2.Location = New System.Drawing.Point(-6, 1)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(985, 54)
+        Me.Label2.TabIndex = 199
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'MainMenu
         '

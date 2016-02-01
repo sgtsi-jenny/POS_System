@@ -204,7 +204,6 @@ Public Class pnlPayment
 
     Private Sub Button3_Click(sender As Object, e As EventArgs)
         getme()
-
     End Sub
 
     Private Sub btnEnter_Click(sender As Object, e As EventArgs) Handles btnEnter.Click
@@ -249,10 +248,7 @@ Public Class pnlPayment
     End Sub
 
     Private Sub btnLock_Click(sender As System.Object, e As EventArgs) Handles btnLock.Click
-        frmLock.ShowDialog()
-        'showUSC(uscLock)
-        showlock(False)
-
+        'frmLock.ShowDialog()
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
@@ -312,23 +308,27 @@ Public Class pnlPayment
         txtTCash.Text = cash
         txtChange.Text = change
         showPayment(False)
-        'Try
-        '    data.Add("item_id", txtCash.Text)
-
-        '    rec = db.ExecuteNonQuery("INSERT INTO Items(product_code,product_name, unit_price,selling_price,unit_id,quantity,category_id,critical_level) " & _
-        '                             "VALUES(@product_code,@product_name,@unit_price,@selling_price,@unit_id,@quantity,@category_id,@critical_level)", data)
-
-        '    If Not rec < 1 Then
-        '        MessageBox.Show("Record saved!", "Important Message", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
-        '        data.Clear()
-        '    End If
-        'Catch ex As Exception
-        '    MsgBox(ex.ToString)
-        'Finally
-        '    db.Dispose()
-        'End Try
+        Try
+            'data.Add("sd_id", txtCash.Text)
+            data.Add("sales_id", txtCash.Text)
+            data.Add("item_id", txtCash.Text)
+            data.Add("quantity", txtCash.Text)
+            data.Add("selling_price", txtCash.Text)
+            data.Add("total_amount", txtCash.Text)
 
 
+            rec = db.ExecuteNonQuery("INSERT INTO Items(product_code,product_name, unit_price,selling_price,unit_id,quantity,category_id,critical_level) " & _
+                                     "VALUES(@product_code,@product_name,@unit_price,@selling_price,@unit_id,@quantity,@category_id,@critical_level)", data)
+
+            If Not rec < 1 Then
+                MessageBox.Show("Record saved!", "Important Message", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                data.Clear()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        Finally
+            db.Dispose()
+        End Try
 
         MsgBox("Transaction successful!", vbInformation + vbOKOnly, "")
     End Sub
@@ -340,7 +340,23 @@ Public Class pnlPayment
         End If
     End Sub
 
-    Private Sub txtCash_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txtCash.MaskInputRejected
+    Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
+        frmLock.ShowDialog()
+        MainMenu.Show()
+        'showlock(False)
+    End Sub
 
+    Private Sub btnQty_Click(sender As Object, e As EventArgs) Handles btnQty.Click
+        pnlQty.BringToFront()
+        showQty(True)
+    End Sub
+    Private Sub showQty(mode As Boolean)
+        pnlQty.Visible = mode
+        Panel1.Enabled = Not mode
+        Panel6.Enabled = Not mode
+    End Sub
+
+    Private Sub btnOkQty_Click(sender As Object, e As EventArgs) Handles btnOkQty.Click
+        showQty(False)
     End Sub
 End Class

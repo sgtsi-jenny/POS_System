@@ -23,6 +23,7 @@ Partial Class Inventory
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -58,7 +59,6 @@ Partial Class Inventory
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtProductCode = New System.Windows.Forms.TextBox()
         Me.lblItemCode = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.pnlMain.SuspendLayout()
         Me.pnlAddEdit.SuspendLayout()
         Me.SuspendLayout()
@@ -78,13 +78,26 @@ Partial Class Inventory
         Me.pnlMain.Size = New System.Drawing.Size(835, 437)
         Me.pnlMain.TabIndex = 0
         '
+        'Label10
+        '
+        Me.Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(110, Byte), Integer))
+        Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label10.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(18, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(387, 54)
+        Me.Label10.TabIndex = 201
+        Me.Label10.Text = "Inventory List"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'btnUpdate
         '
         Me.btnUpdate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(24, Byte), Integer))
         Me.btnUpdate.FlatAppearance.BorderSize = 0
         Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUpdate.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.Color.Black
         Me.btnUpdate.Location = New System.Drawing.Point(718, 0)
         Me.btnUpdate.Name = "btnUpdate"
@@ -100,7 +113,7 @@ Partial Class Inventory
         Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(24, Byte), Integer))
         Me.btnAdd.FlatAppearance.BorderSize = 0
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAdd.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.Black
         Me.btnAdd.Location = New System.Drawing.Point(610, 0)
         Me.btnAdd.Name = "btnAdd"
@@ -129,7 +142,7 @@ Partial Class Inventory
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lvInventory.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader0, Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader8, Me.ColumnHeader6, Me.ColumnHeader7})
-        Me.lvInventory.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvInventory.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvInventory.FullRowSelect = True
         Me.lvInventory.GridLines = True
         Me.lvInventory.Location = New System.Drawing.Point(21, 93)
@@ -220,111 +233,111 @@ Partial Class Inventory
         'txtId
         '
         Me.txtId.BackColor = System.Drawing.Color.White
-        Me.txtId.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtId.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtId.ForeColor = System.Drawing.Color.Black
         Me.txtId.Location = New System.Drawing.Point(184, 77)
         Me.txtId.Name = "txtId"
         Me.txtId.ReadOnly = True
-        Me.txtId.Size = New System.Drawing.Size(69, 29)
+        Me.txtId.Size = New System.Drawing.Size(69, 26)
         Me.txtId.TabIndex = 209
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
         Me.Label9.Location = New System.Drawing.Point(59, 85)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(66, 21)
+        Me.Label9.Size = New System.Drawing.Size(70, 19)
         Me.Label9.TabIndex = 210
         Me.Label9.Text = "Item ID"
         '
         'txtSellingPrice
         '
         Me.txtSellingPrice.BackColor = System.Drawing.Color.White
-        Me.txtSellingPrice.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSellingPrice.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSellingPrice.ForeColor = System.Drawing.Color.Black
         Me.txtSellingPrice.Location = New System.Drawing.Point(184, 272)
         Me.txtSellingPrice.Name = "txtSellingPrice"
-        Me.txtSellingPrice.Size = New System.Drawing.Size(252, 29)
+        Me.txtSellingPrice.Size = New System.Drawing.Size(252, 26)
         Me.txtSellingPrice.TabIndex = 5
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
         Me.Label8.Location = New System.Drawing.Point(58, 280)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(100, 21)
+        Me.Label8.Size = New System.Drawing.Size(108, 19)
         Me.Label8.TabIndex = 208
         Me.Label8.Text = "Seling Price"
         '
         'cmbCategory
         '
         Me.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbCategory.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbCategory.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbCategory.FormattingEnabled = True
         Me.cmbCategory.Location = New System.Drawing.Point(184, 352)
         Me.cmbCategory.Name = "cmbCategory"
-        Me.cmbCategory.Size = New System.Drawing.Size(252, 29)
+        Me.cmbCategory.Size = New System.Drawing.Size(252, 27)
         Me.cmbCategory.TabIndex = 7
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
         Me.Label7.Location = New System.Drawing.Point(59, 360)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(80, 21)
+        Me.Label7.Size = New System.Drawing.Size(82, 19)
         Me.Label7.TabIndex = 206
         Me.Label7.Text = "Category"
         '
         'cmbUnit
         '
         Me.cmbUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbUnit.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbUnit.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbUnit.FormattingEnabled = True
         Me.cmbUnit.Location = New System.Drawing.Point(184, 312)
         Me.cmbUnit.Name = "cmbUnit"
-        Me.cmbUnit.Size = New System.Drawing.Size(252, 29)
+        Me.cmbUnit.Size = New System.Drawing.Size(252, 27)
         Me.cmbUnit.TabIndex = 6
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
         Me.Label5.Location = New System.Drawing.Point(58, 320)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(43, 21)
+        Me.Label5.Size = New System.Drawing.Size(45, 19)
         Me.Label5.TabIndex = 204
         Me.Label5.Text = "Unit"
         '
         'txtCLevel
         '
         Me.txtCLevel.BackColor = System.Drawing.Color.White
-        Me.txtCLevel.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCLevel.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCLevel.ForeColor = System.Drawing.Color.Black
         Me.txtCLevel.Location = New System.Drawing.Point(184, 393)
         Me.txtCLevel.Name = "txtCLevel"
-        Me.txtCLevel.Size = New System.Drawing.Size(252, 29)
+        Me.txtCLevel.Size = New System.Drawing.Size(252, 26)
         Me.txtCLevel.TabIndex = 8
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Black
         Me.Label6.Location = New System.Drawing.Point(58, 401)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(108, 21)
+        Me.Label6.Size = New System.Drawing.Size(119, 19)
         Me.Label6.TabIndex = 202
         Me.Label6.Text = "Critical Level"
         '
@@ -334,7 +347,7 @@ Partial Class Inventory
         Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(24, Byte), Integer))
         Me.btnSave.FlatAppearance.BorderSize = 0
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSave.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.Black
         Me.btnSave.Location = New System.Drawing.Point(267, -1)
         Me.btnSave.Name = "btnSave"
@@ -350,7 +363,7 @@ Partial Class Inventory
         Me.btnEnd.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(24, Byte), Integer))
         Me.btnEnd.FlatAppearance.BorderSize = 0
         Me.btnEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEnd.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEnd.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEnd.ForeColor = System.Drawing.Color.Black
         Me.btnEnd.Location = New System.Drawing.Point(375, -1)
         Me.btnEnd.Name = "btnEnd"
@@ -365,7 +378,7 @@ Partial Class Inventory
         Me.lblAddedit.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblAddedit.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(110, Byte), Integer))
-        Me.lblAddedit.Font = New System.Drawing.Font("Segoe UI Light", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAddedit.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAddedit.ForeColor = System.Drawing.Color.Black
         Me.lblAddedit.Location = New System.Drawing.Point(0, 2)
         Me.lblAddedit.Name = "lblAddedit"
@@ -376,103 +389,90 @@ Partial Class Inventory
         'txtUnitPrice
         '
         Me.txtUnitPrice.BackColor = System.Drawing.Color.White
-        Me.txtUnitPrice.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUnitPrice.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUnitPrice.ForeColor = System.Drawing.Color.Black
         Me.txtUnitPrice.Location = New System.Drawing.Point(184, 233)
         Me.txtUnitPrice.Name = "txtUnitPrice"
-        Me.txtUnitPrice.Size = New System.Drawing.Size(252, 29)
+        Me.txtUnitPrice.Size = New System.Drawing.Size(252, 26)
         Me.txtUnitPrice.TabIndex = 4
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(58, 241)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(85, 21)
+        Me.Label2.Size = New System.Drawing.Size(93, 19)
         Me.Label2.TabIndex = 91
         Me.Label2.Text = "Unit Price"
         '
         'txtQuantity
         '
         Me.txtQuantity.BackColor = System.Drawing.Color.White
-        Me.txtQuantity.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQuantity.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtQuantity.ForeColor = System.Drawing.Color.Black
         Me.txtQuantity.Location = New System.Drawing.Point(184, 194)
         Me.txtQuantity.Name = "txtQuantity"
-        Me.txtQuantity.Size = New System.Drawing.Size(252, 29)
+        Me.txtQuantity.Size = New System.Drawing.Size(252, 26)
         Me.txtQuantity.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(59, 202)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(77, 21)
+        Me.Label3.Size = New System.Drawing.Size(83, 19)
         Me.Label3.TabIndex = 90
         Me.Label3.Text = "Quantity"
         '
         'txtProductName
         '
         Me.txtProductName.BackColor = System.Drawing.Color.White
-        Me.txtProductName.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtProductName.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtProductName.ForeColor = System.Drawing.Color.Black
         Me.txtProductName.Location = New System.Drawing.Point(184, 155)
         Me.txtProductName.Name = "txtProductName"
-        Me.txtProductName.Size = New System.Drawing.Size(252, 29)
+        Me.txtProductName.Size = New System.Drawing.Size(252, 26)
         Me.txtProductName.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(59, 163)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(120, 21)
+        Me.Label1.Size = New System.Drawing.Size(126, 19)
         Me.Label1.TabIndex = 89
         Me.Label1.Text = "Product Name"
         '
         'txtProductCode
         '
         Me.txtProductCode.BackColor = System.Drawing.Color.White
-        Me.txtProductCode.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtProductCode.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtProductCode.ForeColor = System.Drawing.Color.Black
         Me.txtProductCode.Location = New System.Drawing.Point(184, 116)
         Me.txtProductCode.Name = "txtProductCode"
-        Me.txtProductCode.Size = New System.Drawing.Size(252, 29)
+        Me.txtProductCode.Size = New System.Drawing.Size(252, 26)
         Me.txtProductCode.TabIndex = 1
         '
         'lblItemCode
         '
         Me.lblItemCode.AutoSize = True
         Me.lblItemCode.BackColor = System.Drawing.Color.Transparent
-        Me.lblItemCode.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblItemCode.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblItemCode.ForeColor = System.Drawing.Color.Black
         Me.lblItemCode.Location = New System.Drawing.Point(59, 124)
         Me.lblItemCode.Name = "lblItemCode"
-        Me.lblItemCode.Size = New System.Drawing.Size(113, 21)
+        Me.lblItemCode.Size = New System.Drawing.Size(121, 19)
         Me.lblItemCode.TabIndex = 88
         Me.lblItemCode.Text = "Product Code"
-        '
-        'Label10
-        '
-        Me.Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(110, Byte), Integer))
-        Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(18, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(387, 54)
-        Me.Label10.TabIndex = 201
-        Me.Label10.Text = "Inventory List"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Inventory
         '

@@ -33,11 +33,11 @@ Partial Class Login
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Light", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(152, 18)
+        Me.Label3.Location = New System.Drawing.Point(88, 23)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(282, 32)
+        Me.Label3.Size = New System.Drawing.Size(354, 32)
         Me.Label3.TabIndex = 178
         Me.Label3.Text = "Point of Sales System V.1"
         '
@@ -59,19 +59,19 @@ Partial Class Login
         '
         'txtPassword
         '
-        Me.txtPassword.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.Font = New System.Drawing.Font("Bookman Old Style", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.Location = New System.Drawing.Point(169, 93)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.txtPassword.Size = New System.Drawing.Size(258, 29)
+        Me.txtPassword.Size = New System.Drawing.Size(258, 30)
         Me.txtPassword.TabIndex = 176
         '
         'txtUsername
         '
-        Me.txtUsername.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsername.Font = New System.Drawing.Font("Bookman Old Style", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.Location = New System.Drawing.Point(169, 58)
         Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(258, 29)
+        Me.txtUsername.Size = New System.Drawing.Size(258, 30)
         Me.txtUsername.TabIndex = 175
         '
         'lbl_utype

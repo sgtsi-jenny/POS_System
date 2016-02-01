@@ -79,7 +79,37 @@ Public Class frmLock
         End Try
     End Sub
 
-    Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
+    Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+            enterKey()
+        End If
+    End Sub
+
+    Private Sub btnok_Click(sender As Object, e As EventArgs) Handles btnok.Click
         enterKey()
+        showlock(False)
+        uscTransactions.lvw_summary.Items.Clear()
+        uscTransactions.txtSearch.Focus()
+        uscTransactions.txtTotal.Text = "00"
+        uscTransactions.txtTCash.Text = "00"
+        uscTransactions.txtChange.Text = "00"
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Hide()
+    End Sub
+    Private Sub showlock(mode As Boolean)
+        'Panel1.Enabled = mode
+        uscTransactions.txtSearch.Enabled = mode
+        uscTransactions.lvProducts.Enabled = mode
+        uscTransactions.btnEnter.Enabled = mode
+        uscTransactions.btnPrint.Enabled = mode
+        uscTransactions.btnLock.Enabled = mode
+        uscTransactions.btnAdmin.Enabled = mode
+        'btnNew.Enabled = Not mode
+        'btnExit.Enabled = Not mode
+        'Panel6.Enabled = mode
+        'Panel3.Enabled = mode
     End Sub
 End Class

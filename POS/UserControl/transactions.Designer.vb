@@ -28,7 +28,7 @@ Partial Class pnlPayment
         Dim TotalLabel As System.Windows.Forms.Label
         Dim Label3 As System.Windows.Forms.Label
         Dim Label5 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvProducts = New System.Windows.Forms.DataGridView()
         Me.amount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.qty = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -44,6 +44,7 @@ Partial Class pnlPayment
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.btnQty = New System.Windows.Forms.Button()
         Me.lvProducts = New System.Windows.Forms.ListView()
         Me.ColumnHeader0 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -67,6 +68,11 @@ Partial Class pnlPayment
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.SalesIDTextBox = New System.Windows.Forms.TextBox()
         Me.DateTextBox = New System.Windows.Forms.TextBox()
+        Me.pnlQty = New System.Windows.Forms.Panel()
+        Me.btnCancelQty = New System.Windows.Forms.Button()
+        Me.btnOkQty = New System.Windows.Forms.Button()
+        Me.txtQTY = New System.Windows.Forms.MaskedTextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Label4 = New System.Windows.Forms.Label()
         SalesIDLabel = New System.Windows.Forms.Label()
         DateLabel = New System.Windows.Forms.Label()
@@ -78,6 +84,7 @@ Partial Class pnlPayment
         Me.Panel6.SuspendLayout()
         Me.pnlCash.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.pnlQty.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label4
@@ -164,8 +171,8 @@ Partial Class pnlPayment
         Me.dgvProducts.ReadOnly = True
         Me.dgvProducts.RowHeadersVisible = False
         Me.dgvProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvProducts.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvProducts.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvProducts.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgvProducts.ShowEditingIcon = False
         Me.dgvProducts.Size = New System.Drawing.Size(570, 196)
@@ -198,7 +205,7 @@ Partial Class pnlPayment
         Me.lvw_summary.BackColor = System.Drawing.Color.White
         Me.lvw_summary.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lvw_summary.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.id, Me.qty, Me.item_name, Me.price, Me.amount})
-        Me.lvw_summary.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvw_summary.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvw_summary.FullRowSelect = True
         Me.lvw_summary.GridLines = True
         Me.lvw_summary.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
@@ -224,7 +231,7 @@ Partial Class pnlPayment
         '
         Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(110, Byte), Integer))
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(13, 64)
         Me.Label2.Name = "Label2"
@@ -321,6 +328,7 @@ Partial Class pnlPayment
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel6.Controls.Add(Me.btnQty)
         Me.Panel6.Controls.Add(Me.lvProducts)
         Me.Panel6.Controls.Add(Me.btnEnter)
         Me.Panel6.Controls.Add(Me.btnAdmin)
@@ -333,13 +341,27 @@ Partial Class pnlPayment
         Me.Panel6.Size = New System.Drawing.Size(530, 466)
         Me.Panel6.TabIndex = 91
         '
+        'btnQty
+        '
+        Me.btnQty.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnQty.BackColor = System.Drawing.Color.Transparent
+        Me.btnQty.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnQty.Font = New System.Drawing.Font("Bookman Old Style", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnQty.Location = New System.Drawing.Point(-52, 346)
+        Me.btnQty.Name = "btnQty"
+        Me.btnQty.Size = New System.Drawing.Size(309, 51)
+        Me.btnQty.TabIndex = 84
+        Me.btnQty.TabStop = False
+        Me.btnQty.Text = "&QTY (Alt+Q)"
+        Me.btnQty.UseVisualStyleBackColor = False
+        '
         'lvProducts
         '
         Me.lvProducts.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lvProducts.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader0, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader7, Me.ColumnHeader9, Me.ColumnHeader8, Me.ColumnHeader10, Me.ColumnHeader11})
-        Me.lvProducts.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lvProducts.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lvProducts.FullRowSelect = True
         Me.lvProducts.GridLines = True
         Me.lvProducts.HideSelection = False
@@ -394,7 +416,7 @@ Partial Class pnlPayment
         'btnEnter
         '
         Me.btnEnter.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnEnter.Font = New System.Drawing.Font("Bookman Old Style", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEnter.Font = New System.Drawing.Font("Bookman Old Style", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEnter.Location = New System.Drawing.Point(272, 291)
         Me.btnEnter.Name = "btnEnter"
         Me.btnEnter.Size = New System.Drawing.Size(309, 51)
@@ -407,9 +429,9 @@ Partial Class pnlPayment
         Me.btnAdmin.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btnAdmin.BackColor = System.Drawing.Color.Transparent
         Me.btnAdmin.Font = New System.Drawing.Font("Bookman Old Style", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdmin.Location = New System.Drawing.Point(150, 402)
+        Me.btnAdmin.Location = New System.Drawing.Point(272, 403)
         Me.btnAdmin.Name = "btnAdmin"
-        Me.btnAdmin.Size = New System.Drawing.Size(225, 43)
+        Me.btnAdmin.Size = New System.Drawing.Size(309, 51)
         Me.btnAdmin.TabIndex = 12
         Me.btnAdmin.TabStop = False
         Me.btnAdmin.Text = "A&DMIN (Alt+D)"
@@ -434,7 +456,7 @@ Partial Class pnlPayment
         Me.btnLock.BackColor = System.Drawing.Color.Transparent
         Me.btnLock.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnLock.Font = New System.Drawing.Font("Bookman Old Style", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLock.Location = New System.Drawing.Point(272, 348)
+        Me.btnLock.Location = New System.Drawing.Point(272, 346)
         Me.btnLock.Name = "btnLock"
         Me.btnLock.Size = New System.Drawing.Size(309, 51)
         Me.btnLock.TabIndex = 13
@@ -448,7 +470,7 @@ Partial Class pnlPayment
         Me.btnExit.BackColor = System.Drawing.Color.Transparent
         Me.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnExit.Font = New System.Drawing.Font("Bookman Old Style", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExit.Location = New System.Drawing.Point(-52, 348)
+        Me.btnExit.Location = New System.Drawing.Point(-52, 403)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(309, 51)
         Me.btnExit.TabIndex = 11
@@ -517,7 +539,7 @@ Partial Class pnlPayment
         '
         Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(110, Byte), Integer))
         Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
         Me.Label7.Location = New System.Drawing.Point(-1, 1)
         Me.Label7.Name = "Label7"
@@ -566,10 +588,68 @@ Partial Class pnlPayment
         Me.DateTextBox.TabStop = False
         Me.DateTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'pnlQty
+        '
+        Me.pnlQty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pnlQty.Controls.Add(Me.btnCancelQty)
+        Me.pnlQty.Controls.Add(Me.btnOkQty)
+        Me.pnlQty.Controls.Add(Me.txtQTY)
+        Me.pnlQty.Controls.Add(Me.Label6)
+        Me.pnlQty.Location = New System.Drawing.Point(427, 194)
+        Me.pnlQty.Name = "pnlQty"
+        Me.pnlQty.Size = New System.Drawing.Size(390, 194)
+        Me.pnlQty.TabIndex = 95
+        Me.pnlQty.Visible = False
+        '
+        'btnCancelQty
+        '
+        Me.btnCancelQty.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(110, Byte), Integer))
+        Me.btnCancelQty.Font = New System.Drawing.Font("Bookman Old Style", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelQty.Location = New System.Drawing.Point(246, 141)
+        Me.btnCancelQty.Name = "btnCancelQty"
+        Me.btnCancelQty.Size = New System.Drawing.Size(122, 41)
+        Me.btnCancelQty.TabIndex = 46
+        Me.btnCancelQty.Text = "&Cancel"
+        Me.btnCancelQty.UseVisualStyleBackColor = False
+        '
+        'btnOkQty
+        '
+        Me.btnOkQty.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(110, Byte), Integer))
+        Me.btnOkQty.Font = New System.Drawing.Font("Bookman Old Style", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnOkQty.Location = New System.Drawing.Point(23, 141)
+        Me.btnOkQty.Name = "btnOkQty"
+        Me.btnOkQty.Size = New System.Drawing.Size(122, 41)
+        Me.btnOkQty.TabIndex = 45
+        Me.btnOkQty.Text = "&OK"
+        Me.btnOkQty.UseVisualStyleBackColor = False
+        '
+        'txtQTY
+        '
+        Me.txtQTY.Font = New System.Drawing.Font("Bookman Old Style", 35.0!)
+        Me.txtQTY.Location = New System.Drawing.Point(23, 73)
+        Me.txtQTY.Name = "txtQTY"
+        Me.txtQTY.Size = New System.Drawing.Size(345, 62)
+        Me.txtQTY.TabIndex = 42
+        Me.txtQTY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(110, Byte), Integer))
+        Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label6.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(-1, 1)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(390, 54)
+        Me.Label6.TabIndex = 38
+        Me.Label6.Text = "  Enter Quantity"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'pnlPayment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.pnlQty)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Label2)
@@ -587,6 +667,8 @@ Partial Class pnlPayment
         Me.pnlCash.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.pnlQty.ResumeLayout(False)
+        Me.pnlQty.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -628,5 +710,11 @@ Partial Class pnlPayment
     Friend WithEvents txtTCash As System.Windows.Forms.TextBox
     Friend WithEvents id As System.Windows.Forms.ColumnHeader
     Friend WithEvents price As System.Windows.Forms.ColumnHeader
+    Friend WithEvents btnQty As System.Windows.Forms.Button
+    Friend WithEvents pnlQty As System.Windows.Forms.Panel
+    Friend WithEvents btnCancelQty As System.Windows.Forms.Button
+    Friend WithEvents btnOkQty As System.Windows.Forms.Button
+    Friend WithEvents txtQTY As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 
 End Class
