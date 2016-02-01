@@ -357,6 +357,10 @@ Public Class pnlPayment
     End Sub
 
     Private Sub btnOkQty_Click(sender As Object, e As EventArgs) Handles btnOkQty.Click
-        showQty(False)
+        'showQty(True)
+    End Sub
+
+    Private Sub btnCancelQty_Click(sender As Object, e As EventArgs) Handles btnCancelQty.Click
+        showlock(False)
     End Sub
 End Class

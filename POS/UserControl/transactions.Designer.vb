@@ -28,7 +28,7 @@ Partial Class pnlPayment
         Dim TotalLabel As System.Windows.Forms.Label
         Dim Label3 As System.Windows.Forms.Label
         Dim Label5 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvProducts = New System.Windows.Forms.DataGridView()
         Me.amount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.qty = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -171,8 +171,8 @@ Partial Class pnlPayment
         Me.dgvProducts.ReadOnly = True
         Me.dgvProducts.RowHeadersVisible = False
         Me.dgvProducts.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvProducts.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvProducts.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvProducts.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgvProducts.ShowEditingIcon = False
         Me.dgvProducts.Size = New System.Drawing.Size(570, 196)
@@ -416,7 +416,7 @@ Partial Class pnlPayment
         'btnEnter
         '
         Me.btnEnter.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnEnter.Font = New System.Drawing.Font("Bookman Old Style", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEnter.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEnter.Location = New System.Drawing.Point(272, 291)
         Me.btnEnter.Name = "btnEnter"
         Me.btnEnter.Size = New System.Drawing.Size(309, 51)
