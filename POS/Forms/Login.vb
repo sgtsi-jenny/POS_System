@@ -58,6 +58,8 @@ Public Class Login
                     dr.Read()
                     Dim user_level As String = lbl_utype.Text
                     'lbl_utype.Text = CInt(dr.Item("user_type"))
+                    Dim uID = dr.Item("user_id").ToString
+                    lblUid.Text = uID
                     user_level = dr.Item("user_level").ToString
                     If user_level = "user" Then
                         Me.Hide()

@@ -28,6 +28,7 @@ Partial Class Login
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.lbl_utype = New System.Windows.Forms.Label()
+        Me.lblUid = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label3
@@ -83,11 +84,21 @@ Partial Class Login
         Me.lbl_utype.TabIndex = 179
         Me.lbl_utype.Visible = False
         '
+        'lblUid
+        '
+        Me.lblUid.AutoSize = True
+        Me.lblUid.Location = New System.Drawing.Point(458, 27)
+        Me.lblUid.Name = "lblUid"
+        Me.lblUid.Size = New System.Drawing.Size(0, 13)
+        Me.lblUid.TabIndex = 180
+        Me.lblUid.Visible = False
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(439, 188)
+        Me.Controls.Add(Me.lblUid)
         Me.Controls.Add(Me.lbl_utype)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnLog)
@@ -105,4 +116,5 @@ Partial Class Login
     Friend WithEvents txtPassword As System.Windows.Forms.TextBox
     Friend WithEvents txtUsername As System.Windows.Forms.TextBox
     Friend WithEvents lbl_utype As System.Windows.Forms.Label
+    Friend WithEvents lblUid As System.Windows.Forms.Label
 End Class
