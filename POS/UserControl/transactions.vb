@@ -228,6 +228,7 @@ Public Class pnlPayment
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
         lvw_summary.Items.Clear()
         showlock(True)
+        txtSearch.Text = ""
         txtSearch.Focus()
         txtTotal.Text = "00"
         txtTCash.Text = "00"
@@ -241,6 +242,7 @@ Public Class pnlPayment
         btnPrint.Enabled = mode
         btnLock.Enabled = mode
         btnAdmin.Enabled = mode
+        btnQty.Enabled = mode
         'btnNew.Enabled = Not mode
         'btnExit.Enabled = Not mode
         'Panel6.Enabled = mode
@@ -259,7 +261,7 @@ Public Class pnlPayment
     End Sub
     Private Shared row As Integer
 
-    Private Sub AddSubjectToList()
+    Private Sub AddItemToList()
         Dim qty As Integer
         Dim price As Double
         lvw_summary.Items.Add(lvProducts.FocusedItem.Text) 'Subject Code  
@@ -268,7 +270,8 @@ Public Class pnlPayment
             price = lvProducts.FocusedItem.SubItems(3).Text
             qty = 1
             total = price * qty
-            lvw_summary.Items(row).SubItems.Add("1")
+            'lvw_summary.Items(row).SubItems.Add(.SubItems(0))
+            lvw_summary.Items(row).SubItems.Add(qty)
             lvw_summary.Items(row).SubItems.Add(.SubItems(2))
             lvw_summary.Items(row).SubItems.Add(.SubItems(3))
             lvw_summary.Items(row).SubItems.Add(total)
@@ -280,9 +283,7 @@ Public Class pnlPayment
         row = row + 1
     End Sub
     Private Sub lvProducts_DoubleClick(sender As Object, e As EventArgs) Handles lvProducts.DoubleClick
-        'lvw_summary.Items.Add(lvProducts.Items(lvProducts.SelectedItem.Count).Clone())
-
-        AddSubjectToList()
+        AddItemToList()
         txtTotal.Text = total_Amount
     End Sub
 
@@ -301,6 +302,7 @@ Public Class pnlPayment
         compute()
     End Sub
     Private Sub compute()
+        Dim query, firstState, lastState As String
         Dim total, cash, change As Double
         total = CDbl(txtTotal.Text)
         cash = CDbl(txtCash.Text)
@@ -308,21 +310,75 @@ Public Class pnlPayment
         txtTCash.Text = cash
         txtChange.Text = change
         showPayment(False)
+
         Try
-            'data.Add("sd_id", txtCash.Text)
-            data.Add("sales_id", txtCash.Text)
-            data.Add("item_id", txtCash.Text)
-            data.Add("quantity", txtCash.Text)
-            data.Add("selling_price", txtCash.Text)
-            data.Add("total_amount", txtCash.Text)
+            'data.Add("sales_id", txtCash.Text)
+            Dim comName = System.Net.Dns.GetHostName
+            Dim purchase_date = DateTime.Now
+            Dim order_no = purchase_date.ToString("yyyyMMddhmmss") + Login.lblUid.Text
+            data.Add("date_purchased", DateToStr(purchase_date))
+            data.Add("user_id", Login.lblUid.Text)
+            data.Add("terminal_id", comName)
+            data.Add("order_number", order_no)
+            data.Add("status", "1")
+            data.Add("date_encoded", DateToStr(DateTime.Now))
+            data.Add("invoice_number", "00000000")
+            data.Add("payment_mode", "1")
+            data.Add("total_amount", txtTotal.Text)
+
+            'SAVING in SALES MAIN
+            query = "INSERT INTO Sales_main(date_purchased,user_id,terminal_id,order_number,status,date_encoded,invoice_number,payment_mode,total_amount) " & _
+                                     "VALUES(@date_purchased,@user_id,@terminal_id,@order_number,@status,@date_encoded,@invoice_number,@payment_mode,@total_amount)"
 
 
-            rec = db.ExecuteNonQuery("INSERT INTO Items(product_code,product_name, unit_price,selling_price,unit_id,quantity,category_id,critical_level) " & _
-                                     "VALUES(@product_code,@product_name,@unit_price,@selling_price,@unit_id,@quantity,@category_id,@critical_level)", data)
+            ' data.Clear()
+            'SAVING in SALES DETAILS
+            For i = 0 To lvw_summary.Items.Count - 1
+                lvw_summary.Items(i).Selected = True
+                Dim iID, qty, s_price, item_name, tAmount
+
+                firstState = "BEGIN TRANSACTION "
+                lastState = "COMMIT "
+                query += " DECLARE @s_id INT " & vbCrLf &
+                " SET @s_id = SCOPE_IDENTITY()" & vbCrLf
+
+                '
+                iID = lvw_summary.Items(i).Text
+                qty = lvw_summary.Items(i).SubItems(1).Text
+                item_name = lvw_summary.Items(i).SubItems(2).Text
+                s_price = lvw_summary.Items(i).SubItems(3).Text
+                tAmount = lvw_summary.Items(i).SubItems(4).Text
+
+                For x = 1 To lvw_summary.Items.Count Step 1
+
+                    data.Add("item_id_" & x - 1, lvw_summary.Items(x - 1).SubItems(0).Text)
+                    data.Add("quantity_" & x - 1, lvw_summary.Items(x - 1).SubItems(1).Text)
+                    data.Add("selling_price_" & x - 1, lvw_summary.Items(x - 1).SubItems(3).Text)
+                    data.Add("amount_per_item_" & x - 1, lvw_summary.Items(x - 1).SubItems(4).Text)
+
+                    query += "INSERT INTO Sales_details (sales_id, item_id, quantity, seling_price, total_amount) " & _
+                        "VALUES (@s_id , @item_id_" & x - 1 & ", @quantity_" & x - 1 & ", @selling_price_" & x - 1 & ", @amount_per_item_" & x - 1 & ")" & vbCrLf ' number na ito!
+
+                Next
+
+                rec = db.ExecuteNonQuery(firstState & vbCrLf & query & vbCrLf & lastState, data)
+                data.Clear()
+            Next i
+
+
+            'For i = 0 To lvw_summary.Items.Count - 1
+            '    lvw_summary.Items(i).Selected = True
+            '    MsgBox(i)
+            'Next i
+            'Exit Sub
+
+
 
             If Not rec < 1 Then
-                MessageBox.Show("Record saved!", "Important Message", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                MessageBox.Show("Transaction successful!", "Important Message", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                 data.Clear()
+            Else
+                MsgBox("Transaction Failed!")
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -330,7 +386,7 @@ Public Class pnlPayment
             db.Dispose()
         End Try
 
-        MsgBox("Transaction successful!", vbInformation + vbOKOnly, "")
+        'MsgBox("Transaction successful!", vbInformation + vbOKOnly, "")
     End Sub
 
     Private Sub txtCash_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCash.KeyDown
@@ -349,6 +405,7 @@ Public Class pnlPayment
     Private Sub btnQty_Click(sender As Object, e As EventArgs) Handles btnQty.Click
         pnlQty.BringToFront()
         showQty(True)
+        txtQTY.Focus()
     End Sub
     Private Sub showQty(mode As Boolean)
         pnlQty.Visible = mode
@@ -357,10 +414,18 @@ Public Class pnlPayment
     End Sub
 
     Private Sub btnOkQty_Click(sender As Object, e As EventArgs) Handles btnOkQty.Click
-        'showQty(True)
+
+    End Sub
+    Private Sub addQty()
+
     End Sub
 
     Private Sub btnCancelQty_Click(sender As Object, e As EventArgs) Handles btnCancelQty.Click
-        showlock(False)
+        showQty(False)
+        txtQTY.Text = ""
+    End Sub
+
+    Private Sub txtQTY_KeyDown(sender As Object, e As KeyEventArgs) Handles txtQTY.KeyDown
+
     End Sub
 End Class
