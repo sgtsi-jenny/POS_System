@@ -139,10 +139,34 @@
       <DependentUpon>Sales_Report.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\Sales_Report1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sales_Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserControl\Inventory.Designer.vb">
       <DependentUpon>Inventory.vb</DependentUpon>
     </Compile>
     <Compile Include="UserControl\Inventory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\MaintenanceCategory.Designer.vb">
+      <DependentUpon>MaintenanceCategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\MaintenanceCategory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\MaintenanceInventory.Designer.vb">
+      <DependentUpon>MaintenanceInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\MaintenanceInventory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\MaintenanceUnit.Designer.vb">
+      <DependentUpon>MaintenanceUnit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\MaintenanceUnit.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControl\Reports.Designer.vb">
@@ -185,10 +209,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Sales_Report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Sales_Report.vb</LastGenOutput>
+      <LastGenOutput>Sales_Report1.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Inventory.resx">
       <DependentUpon>Inventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\MaintenanceCategory.resx">
+      <DependentUpon>MaintenanceCategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\MaintenanceInventory.resx">
+      <DependentUpon>MaintenanceInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\MaintenanceUnit.resx">
+      <DependentUpon>MaintenanceUnit.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl\Reports.resx">
       <DependentUpon>Reports.vb</DependentUpon>

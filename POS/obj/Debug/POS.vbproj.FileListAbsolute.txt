@@ -33,3 +33,6 @@ C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.vbproj.GenerateResou
 C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.vbprojResolveAssemblyReference.cache
 C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.Reports.resources
 C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.btnBACK.resources
+C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.MaintenanceInventory.resources
+C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.MaintenanceUnit.resources
+C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.MaintenanceCategory.resources

@@ -46,7 +46,7 @@
                     End With
                 Loop
             Else
-                MsgBox("No record of products", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "No users")
+                MsgBox("No record of products", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "No products")
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -205,12 +205,51 @@
             db.Dispose()
         End Try
     End Sub
+    Private Sub searchMe()
+        Dim parameters As New Dictionary(Of String, Object)
+        lvInventory.Items.Clear()
+        Dim Item As ListViewItem
+        Try
+            dr = db.ExecuteReader("Select item_id,product_code, product_name,unit_price,selling_price,quantity,U.description as Unit,C.description as Category, " & _
+                                  "critical_level from Items as I LEFT JOIN Categories as C on I.category_id=c.category_id " & _
+                                  "LEFT JOIN Units as U on I.unit_id=U.unit_id WHERE product_code LIKE '%" & txtSearch.Text & "%' OR " & _
+                                  " product_name LIKE '%" & txtSearch.Text & "%'")
+            If dr.HasRows Then
+                Do While dr.Read
+                    Item = Me.lvInventory.Items.Add(dr.Item("item_id").ToString)
+                    With Item
+                        .SubItems.Add(dr.Item("product_code"))
+                        .SubItems.Add(dr.Item("product_name"))
+                        .SubItems.Add(dr.Item("unit_price"))
+                        .SubItems.Add(dr.Item("selling_price"))
+                        .SubItems.Add(dr.Item("Unit"))
+                        .SubItems.Add(dr.Item("quantity"))
+                        .SubItems.Add(dr.Item("Category"))
+                        .SubItems.Add(dr.Item("critical_level"))
+                    End With
+                Loop
 
-    Private Sub cmbUnit_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbUnit.SelectedIndexChanged
+            End If
 
+        Catch ex As Exception
+            MsgBox("Error occured!" & vbCrLf & ex.ToString, vbCritical + vbOKOnly, "Error")
+        Finally
+            db.Dispose()
+        End Try
     End Sub
 
-    Private Sub pnlMain_Paint(sender As Object, e As PaintEventArgs) Handles pnlMain.Paint
+    Private Sub txtSearch_Click(sender As Object, e As EventArgs) Handles txtSearch.Click
+        txtSearch.Text = ""
+    End Sub
+
+    Private Sub txtSearch_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSearch.KeyDown
+
+    End Sub
+    Private Sub txtsearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        searchMe()
+    End Sub
+
+    Private Sub lvInventory_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lvInventory.SelectedIndexChanged
 
     End Sub
 End Class

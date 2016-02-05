@@ -41,9 +41,17 @@ Partial Class btnBACK
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.pnlMaintenance = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnMainBack = New System.Windows.Forms.Button()
+        Me.btnMainTax = New System.Windows.Forms.Button()
+        Me.btnMainCategory = New System.Windows.Forms.Button()
+        Me.btnMainUnit = New System.Windows.Forms.Button()
+        Me.btnMainInventory = New System.Windows.Forms.Button()
         Me.panelMain.SuspendLayout()
         Me.pnl_main.SuspendLayout()
         Me.pnlReports.SuspendLayout()
+        Me.pnlMaintenance.SuspendLayout()
         Me.SuspendLayout()
         '
         'panelMain
@@ -65,9 +73,9 @@ Partial Class btnBACK
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(110, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Gold
-        Me.Label1.Location = New System.Drawing.Point(3, 0)
+        Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(786, 54)
+        Me.Label1.Size = New System.Drawing.Size(789, 54)
         Me.Label1.TabIndex = 198
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
@@ -199,7 +207,7 @@ Partial Class btnBACK
         Me.btnInventory.Name = "btnInventory"
         Me.btnInventory.Size = New System.Drawing.Size(178, 85)
         Me.btnInventory.TabIndex = 4
-        Me.btnInventory.Text = "INVENTORY"
+        Me.btnInventory.Text = "PRODUCTS"
         Me.btnInventory.TextAlign = System.Drawing.ContentAlignment.TopRight
         Me.btnInventory.UseVisualStyleBackColor = False
         '
@@ -326,15 +334,127 @@ Partial Class btnBACK
         Me.Button6.TextAlign = System.Drawing.ContentAlignment.TopRight
         Me.Button6.UseVisualStyleBackColor = False
         '
+        'pnlMaintenance
+        '
+        Me.pnlMaintenance.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.pnlMaintenance.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.pnlMaintenance.Controls.Add(Me.Label5)
+        Me.pnlMaintenance.Controls.Add(Me.btnMainBack)
+        Me.pnlMaintenance.Controls.Add(Me.btnMainTax)
+        Me.pnlMaintenance.Controls.Add(Me.btnMainCategory)
+        Me.pnlMaintenance.Controls.Add(Me.btnMainUnit)
+        Me.pnlMaintenance.Controls.Add(Me.btnMainInventory)
+        Me.pnlMaintenance.Location = New System.Drawing.Point(-7, 1)
+        Me.pnlMaintenance.Name = "pnlMaintenance"
+        Me.pnlMaintenance.Size = New System.Drawing.Size(201, 664)
+        Me.pnlMaintenance.TabIndex = 202
+        Me.pnlMaintenance.Visible = False
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Light", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Gold
+        Me.Label5.Location = New System.Drawing.Point(0, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(201, 54)
+        Me.Label5.TabIndex = 197
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        '
+        'btnMainBack
+        '
+        Me.btnMainBack.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.btnMainBack.FlatAppearance.BorderSize = 0
+        Me.btnMainBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMainBack.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMainBack.ForeColor = System.Drawing.Color.Black
+        Me.btnMainBack.Image = CType(resources.GetObject("btnMainBack.Image"), System.Drawing.Image)
+        Me.btnMainBack.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnMainBack.Location = New System.Drawing.Point(14, 445)
+        Me.btnMainBack.Name = "btnMainBack"
+        Me.btnMainBack.Size = New System.Drawing.Size(178, 85)
+        Me.btnMainBack.TabIndex = 8
+        Me.btnMainBack.Text = "BACK"
+        Me.btnMainBack.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.btnMainBack.UseVisualStyleBackColor = False
+        '
+        'btnMainTax
+        '
+        Me.btnMainTax.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.btnMainTax.FlatAppearance.BorderSize = 0
+        Me.btnMainTax.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMainTax.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMainTax.ForeColor = System.Drawing.Color.Black
+        Me.btnMainTax.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnMainTax.Location = New System.Drawing.Point(13, 356)
+        Me.btnMainTax.Name = "btnMainTax"
+        Me.btnMainTax.Size = New System.Drawing.Size(178, 85)
+        Me.btnMainTax.TabIndex = 7
+        Me.btnMainTax.Text = "TAX"
+        Me.btnMainTax.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.btnMainTax.UseVisualStyleBackColor = False
+        '
+        'btnMainCategory
+        '
+        Me.btnMainCategory.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.btnMainCategory.FlatAppearance.BorderSize = 0
+        Me.btnMainCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMainCategory.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMainCategory.ForeColor = System.Drawing.Color.Black
+        Me.btnMainCategory.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnMainCategory.Location = New System.Drawing.Point(13, 267)
+        Me.btnMainCategory.Name = "btnMainCategory"
+        Me.btnMainCategory.Size = New System.Drawing.Size(178, 85)
+        Me.btnMainCategory.TabIndex = 6
+        Me.btnMainCategory.Text = "CATEGORY"
+        Me.btnMainCategory.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.btnMainCategory.UseVisualStyleBackColor = False
+        '
+        'btnMainUnit
+        '
+        Me.btnMainUnit.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.btnMainUnit.FlatAppearance.BorderSize = 0
+        Me.btnMainUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMainUnit.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMainUnit.ForeColor = System.Drawing.Color.Black
+        Me.btnMainUnit.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnMainUnit.Location = New System.Drawing.Point(14, 178)
+        Me.btnMainUnit.Name = "btnMainUnit"
+        Me.btnMainUnit.Size = New System.Drawing.Size(178, 85)
+        Me.btnMainUnit.TabIndex = 5
+        Me.btnMainUnit.Text = "UNIT"
+        Me.btnMainUnit.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.btnMainUnit.UseVisualStyleBackColor = False
+        '
+        'btnMainInventory
+        '
+        Me.btnMainInventory.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.btnMainInventory.FlatAppearance.BorderSize = 0
+        Me.btnMainInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMainInventory.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMainInventory.ForeColor = System.Drawing.Color.Black
+        Me.btnMainInventory.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.btnMainInventory.Location = New System.Drawing.Point(13, 90)
+        Me.btnMainInventory.Name = "btnMainInventory"
+        Me.btnMainInventory.Size = New System.Drawing.Size(178, 85)
+        Me.btnMainInventory.TabIndex = 4
+        Me.btnMainInventory.Text = "INVENTORY"
+        Me.btnMainInventory.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.btnMainInventory.UseVisualStyleBackColor = False
+        '
         'btnBACK
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(974, 668)
-        Me.Controls.Add(Me.pnlReports)
-        Me.Controls.Add(Me.pnl_main)
+        Me.Controls.Add(Me.pnlMaintenance)
         Me.Controls.Add(Me.panelMain)
+        Me.Controls.Add(Me.pnl_main)
+        Me.Controls.Add(Me.pnlReports)
         Me.Controls.Add(Me.Label2)
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Name = "btnBACK"
@@ -343,6 +463,7 @@ Partial Class btnBACK
         Me.panelMain.ResumeLayout(False)
         Me.pnl_main.ResumeLayout(False)
         Me.pnlReports.ResumeLayout(False)
+        Me.pnlMaintenance.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -364,4 +485,11 @@ Partial Class btnBACK
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents pnlMaintenance As System.Windows.Forms.Panel
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents btnMainBack As System.Windows.Forms.Button
+    Friend WithEvents btnMainTax As System.Windows.Forms.Button
+    Friend WithEvents btnMainCategory As System.Windows.Forms.Button
+    Friend WithEvents btnMainUnit As System.Windows.Forms.Button
+    Friend WithEvents btnMainInventory As System.Windows.Forms.Button
 End Class

@@ -5,6 +5,9 @@
     Public uscTransactions As New pnlPayment
     Public uscUsers As New Users
     Public uscReports As New Reports
+    Public uscMaintenanceInventory As New MaintenanceInventory
+    Public uscMaintenanceUnit As New MaintenanceUnit
+    Public uscMaintenanceCategory As New MaintenanceCategory
 
 
     Public currentUSC As Control

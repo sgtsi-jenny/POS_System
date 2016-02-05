@@ -50,5 +50,31 @@
     Private Sub back_Click(sender As Object, e As EventArgs) Handles back.Click
         pnl_main.BringToFront()
         showPanel(True)
+        panelMain.Controls.Clear()
+    End Sub
+
+    Private Sub btnMaintenance_Click(sender As Object, e As EventArgs) Handles btnMaintenance.Click
+        pnlMaintenance.Visible = True
+        pnlMaintenance.BringToFront()
+        showUSC(uscMaintenanceInventory)
+    End Sub
+
+    Private Sub btnMainBack_Click(sender As Object, e As EventArgs) Handles btnMainBack.Click
+        pnlMaintenance.Visible = False
+        showPanel(True)
+        panelMain.Controls.Clear()
+
+    End Sub
+
+    Private Sub btnMainUnit_Click(sender As Object, e As EventArgs) Handles btnMainUnit.Click
+        showUSC(uscMaintenanceUnit)
+    End Sub
+
+    Private Sub btnMainInventory_Click(sender As Object, e As EventArgs) Handles btnMainInventory.Click
+        showUSC(uscMaintenanceInventory)
+    End Sub
+
+    Private Sub btnMainCategory_Click(sender As Object, e As EventArgs) Handles btnMainCategory.Click
+        showUSC(uscMaintenanceCategory)
     End Sub
 End Class

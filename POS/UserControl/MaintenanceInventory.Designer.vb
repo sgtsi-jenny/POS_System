@@ -23,6 +23,7 @@ Partial Class MaintenanceInventory
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.btnAcquire = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btnUpdate = New System.Windows.Forms.Button()
@@ -66,6 +67,7 @@ Partial Class MaintenanceInventory
         Me.pnlMain.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlMain.Controls.Add(Me.btnAcquire)
         Me.pnlMain.Controls.Add(Me.btnDelete)
         Me.pnlMain.Controls.Add(Me.Label10)
         Me.pnlMain.Controls.Add(Me.btnUpdate)
@@ -76,6 +78,22 @@ Partial Class MaintenanceInventory
         Me.pnlMain.Name = "pnlMain"
         Me.pnlMain.Size = New System.Drawing.Size(835, 446)
         Me.pnlMain.TabIndex = 1
+        '
+        'btnAcquire
+        '
+        Me.btnAcquire.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnAcquire.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(24, Byte), Integer))
+        Me.btnAcquire.FlatAppearance.BorderSize = 0
+        Me.btnAcquire.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAcquire.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAcquire.ForeColor = System.Drawing.Color.Black
+        Me.btnAcquire.Location = New System.Drawing.Point(399, 1)
+        Me.btnAcquire.Name = "btnAcquire"
+        Me.btnAcquire.Size = New System.Drawing.Size(102, 54)
+        Me.btnAcquire.TabIndex = 203
+        Me.btnAcquire.Text = "Acquire"
+        Me.btnAcquire.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnAcquire.UseVisualStyleBackColor = False
         '
         'btnDelete
         '
@@ -236,7 +254,7 @@ Partial Class MaintenanceInventory
         Me.pnlAddEdit.Controls.Add(Me.txtProductCode)
         Me.pnlAddEdit.Controls.Add(Me.lblItemCode)
         Me.pnlAddEdit.Controls.Add(Me.txtId)
-        Me.pnlAddEdit.Location = New System.Drawing.Point(175, -2)
+        Me.pnlAddEdit.Location = New System.Drawing.Point(175, -3)
         Me.pnlAddEdit.Name = "pnlAddEdit"
         Me.pnlAddEdit.Size = New System.Drawing.Size(489, 345)
         Me.pnlAddEdit.TabIndex = 6
@@ -502,5 +520,6 @@ Partial Class MaintenanceInventory
     Friend WithEvents txtProductCode As System.Windows.Forms.TextBox
     Friend WithEvents lblItemCode As System.Windows.Forms.Label
     Friend WithEvents txtId As System.Windows.Forms.TextBox
+    Friend WithEvents btnAcquire As System.Windows.Forms.Button
 
 End Class
