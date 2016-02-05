@@ -114,6 +114,17 @@ Namespace My
                 Me("DBsource") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-A16DAST\DBSQL;Initial Catalog=POS;Persist Security Info=True;"& _ 
+            "User ID=sa;Password=p@ssword")>  _
+        Public ReadOnly Property POSConnectionString() As String
+            Get
+                Return CType(Me("POSConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
