@@ -24,10 +24,12 @@ C:\Users\asus\Documents\GitHub\POS_System\POS\bin\Debug\POS.pdb
 C:\Users\asus\Documents\GitHub\POS_System\POS\bin\Debug\POS.xml
 C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.frmLock.resources
 C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.Login.resources
-C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.MainMenu.resources
 C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.POS.resources
 C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.Resources.resources
 C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.Inventory.resources
 C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.pnlPayment.resources
 C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.Users.resources
 C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.vbproj.GenerateResource.Cache
+C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.vbprojResolveAssemblyReference.cache
+C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.Reports.resources
+C:\Users\asus\Documents\GitHub\POS_System\POS\obj\Debug\POS.btnBACK.resources

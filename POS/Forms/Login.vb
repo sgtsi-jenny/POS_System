@@ -68,7 +68,7 @@ Public Class Login
                     Else
                         Me.Hide()
                         reset()
-                        MainMenu.Show()
+                        btnBACK.Show()
                     End If
                     
                 Else

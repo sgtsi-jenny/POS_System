@@ -27,6 +27,34 @@ POS
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
+</member><member name="T:POS.dsPOS.ReceiptDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:POS.dsPOS.SalesReportDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:POS.dsPOS.ReceiptRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:POS.dsPOS.SalesReportRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:POS.dsPOS.ReceiptRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:POS.dsPOS.SalesReportRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:POS.dsPOS">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
 </member>
 </members>
 </doc>

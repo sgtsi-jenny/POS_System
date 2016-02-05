@@ -66,7 +66,7 @@
         EditItemInListView()
     End Sub
     Private Function correctinputs()
-        If txtProductCode.Text = "" Or txtProductName.Text = "" Or txtQuantity.Text = "" Or cmbUnit.Text = "" Or txtSellingPrice.Text = "" Or txtQuantity.Text = "" Or cmbCategory.Text = "" Or txtCLevel.Text = "" Then
+        If txtProductCode.Text = "" Or txtProductName.Text = "" Or cmbUnit.Text = "" Or txtSellingPrice.Text = "" Or cmbCategory.Text = "" Or txtCLevel.Text = "" Then
             MessageBox.Show("Some fields are empty.", "Fill up the Form", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
             Return False
         Else
@@ -74,7 +74,7 @@
         End If
     End Function
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If txtProductCode.Text = "" Or txtProductName.Text = "" Or txtQuantity.Text = "" Or cmbUnit.Text = "" Or txtSellingPrice.Text = "" Or txtQuantity.Text = "" Or cmbCategory.Text = "" Or txtCLevel.Text = "" Then
+        If txtProductCode.Text = "" Or txtProductName.Text = "" Or cmbUnit.Text = "" Or txtSellingPrice.Text = "" Or cmbCategory.Text = "" Or txtCLevel.Text = "" Then
             MessageBox.Show("Some fields are empty.", "Fill up the Form", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
             Exit Sub
         End If
@@ -89,12 +89,12 @@
                 data.Add("unit_price", txtUnitPrice.Text)
                 data.Add("selling_price", txtSellingPrice.Text)
                 data.Add("unit_id", cmbUnit.SelectedIndex + 1)
-                data.Add("quantity", txtQuantity.Text)
+                'data.Add("quantity", txtQuantity.Text)
                 data.Add("category_id", cmbCategory.SelectedIndex + 1)
                 data.Add("critical_level", txtCLevel.Text)
 
-                rec = db.ExecuteNonQuery("INSERT INTO Items(product_code,product_name, unit_price,selling_price,unit_id,quantity,category_id,critical_level) " & _
-                                         "VALUES(@product_code,@product_name,@unit_price,@selling_price,@unit_id,@quantity,@category_id,@critical_level)", data)
+                rec = db.ExecuteNonQuery("INSERT INTO Items(product_code,product_name, unit_price,selling_price,unit_id,category_id,critical_level) " & _
+                                         "VALUES(@product_code,@product_name,@unit_price,@selling_price,@unit_id,@category_id,@critical_level)", data)
 
                 If Not rec < 1 Then
                     MessageBox.Show("Record saved!", "Important Message", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
@@ -119,11 +119,11 @@
                 data.Add("unit_price", txtUnitPrice.Text)
                 data.Add("selling_price", txtSellingPrice.Text)
                 data.Add("unit_id", cmbUnit.SelectedIndex + 1)
-                data.Add("quantity", txtQuantity.Text)
+                'data.Add("quantity", txtQuantity.Text)
                 data.Add("category_id", cmbCategory.SelectedIndex + 1)
                 data.Add("critical_level", txtCLevel.Text)
                 rec = db.ExecuteNonQuery("UPDATE Items set product_code=@product_code,product_name=@product_name,unit_price=@unit_price, " & _
-                                         "selling_price=@selling_price,unit_id=@unit_id,quantity=@quantity,category_id=@category_id,critical_level=@critical_level  WHERE item_id = " & txtId.Text, data)
+                                         "selling_price=@selling_price,unit_id=@unit_id,category_id=@category_id,critical_level=@critical_level  WHERE item_id = " & txtId.Text, data)
                 'MsgBox("Unit = " & cmbUnit.SelectedIndex + 1)
                 'MsgBox("Category = " & cmbCategory.SelectedIndex + 1)
                 If Not rec < 1 Then
@@ -156,7 +156,7 @@
             txtUnitPrice.Text = lvInventory.SelectedItems(0).SubItems(3).Text
             txtSellingPrice.Text = lvInventory.SelectedItems(0).SubItems(4).Text
             cmbUnit.Text = lvInventory.SelectedItems(0).SubItems(5).Text
-            txtQuantity.Text = lvInventory.SelectedItems(0).SubItems(6).Text
+            'txtQuantity.Text = lvInventory.SelectedItems(0).SubItems(6).Text
             cmbCategory.Text = lvInventory.SelectedItems(0).SubItems(7).Text
             txtCLevel.Text = lvInventory.SelectedItems(0).SubItems(8).Text
                 
@@ -207,6 +207,10 @@
     End Sub
 
     Private Sub cmbUnit_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbUnit.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub pnlMain_Paint(sender As Object, e As PaintEventArgs) Handles pnlMain.Paint
 
     End Sub
 End Class

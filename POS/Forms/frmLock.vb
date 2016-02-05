@@ -37,6 +37,7 @@ Public Class frmLock
         Return ASCIIEncoding.ASCII.GetString(DES.CreateDecryptor().TransformFinalBlock(Buffer, 0, Buffer.Length))
     End Function
     Private Sub frmLock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtPassword.Text = ""
         txtPassword.Focus()
     End Sub
     Private Sub enterKey()
@@ -44,11 +45,9 @@ Public Class frmLock
 
 
             Dim pass As String = txtPassword.Text
-
             If txtPassword.Text = " " Then
                 MsgBox("Enter unlock Key. ", MsgBoxStyle.Exclamation, "Invalid")
                 txtPassword.Focus()
-
             Else
 
                 Dim dr As SqlDataReader
@@ -60,12 +59,21 @@ Public Class frmLock
                 If dr.HasRows Then
                     dr.Read()
                     Me.Hide()
+                    'showlock(False)
+                    'uscTransactions.lvw_summary.Items.Clear()
+                    'uscTransactions.txtSearch.Focus()
+                    'uscTransactions.txtTotal.Text = "00"
+                    'uscTransactions.txtTCash.Text = "00"
+                    'uscTransactions.txtChange.Text = "00"
+                    POS.Hide()
+                    btnBACK.Show()
                     'showLock(True)
 
                 Else
                     MsgBox("Invalid key", MsgBoxStyle.Exclamation, "Invalid")
                     txtPassword.Text = ""
                     txtPassword.Focus()
+                    Exit Sub
                 End If
                 'Do While dr.Read
                 '    MsgBox(dr.Item(1).ToString)
@@ -88,15 +96,10 @@ Public Class frmLock
 
     Private Sub btnok_Click(sender As Object, e As EventArgs) Handles btnok.Click
         enterKey()
-        showlock(False)
-        uscTransactions.lvw_summary.Items.Clear()
-        uscTransactions.txtSearch.Focus()
-        uscTransactions.txtTotal.Text = "00"
-        uscTransactions.txtTCash.Text = "00"
-        uscTransactions.txtChange.Text = "00"
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        'showlock(True)
         Me.Hide()
     End Sub
     Private Sub showlock(mode As Boolean)
@@ -104,12 +107,16 @@ Public Class frmLock
         uscTransactions.txtSearch.Enabled = mode
         uscTransactions.lvProducts.Enabled = mode
         uscTransactions.btnEnter.Enabled = mode
-        uscTransactions.btnPrint.Enabled = mode
-        uscTransactions.btnLock.Enabled = mode
-        uscTransactions.btnAdmin.Enabled = mode
+        'uscTransactions.btnPrint.Enabled = mode
+        'uscTransactions.btnLock.Enabled = mode
+        'uscTransactions.btnAdmin.Enabled = mode
         'btnNew.Enabled = Not mode
         'btnExit.Enabled = Not mode
         'Panel6.Enabled = mode
         'Panel3.Enabled = mode
+    End Sub
+
+    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
+
     End Sub
 End Class

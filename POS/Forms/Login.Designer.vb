@@ -34,11 +34,11 @@ Partial Class Login
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(88, 23)
+        Me.Label3.Location = New System.Drawing.Point(106, 15)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(354, 32)
+        Me.Label3.Size = New System.Drawing.Size(334, 40)
         Me.Label3.TabIndex = 178
         Me.Label3.Text = "Point of Sales System V.1"
         '
@@ -50,7 +50,7 @@ Partial Class Login
         Me.btnLog.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLog.ForeColor = System.Drawing.Color.Black
         Me.btnLog.Image = CType(resources.GetObject("btnLog.Image"), System.Drawing.Image)
-        Me.btnLog.Location = New System.Drawing.Point(363, 128)
+        Me.btnLog.Location = New System.Drawing.Point(362, 128)
         Me.btnLog.Name = "btnLog"
         Me.btnLog.Size = New System.Drawing.Size(64, 48)
         Me.btnLog.TabIndex = 177
@@ -60,19 +60,19 @@ Partial Class Login
         '
         'txtPassword
         '
-        Me.txtPassword.Font = New System.Drawing.Font("Bookman Old Style", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.Location = New System.Drawing.Point(169, 93)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.txtPassword.Size = New System.Drawing.Size(258, 30)
+        Me.txtPassword.Size = New System.Drawing.Size(258, 33)
         Me.txtPassword.TabIndex = 176
         '
         'txtUsername
         '
-        Me.txtUsername.Font = New System.Drawing.Font("Bookman Old Style", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsername.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.Location = New System.Drawing.Point(169, 58)
         Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(258, 30)
+        Me.txtUsername.Size = New System.Drawing.Size(258, 33)
         Me.txtUsername.TabIndex = 175
         '
         'lbl_utype

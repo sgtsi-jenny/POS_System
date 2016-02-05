@@ -24,10 +24,10 @@ Partial Class frmLock
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.btnok = New System.Windows.Forms.Button()
         Me.PasswordLabel = New System.Windows.Forms.Label()
-        Me.btnCancel = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -53,6 +53,18 @@ Partial Class frmLock
         Me.GroupBox1.Size = New System.Drawing.Size(409, 126)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
+        '
+        'btnCancel
+        '
+        Me.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnCancel.BackColor = System.Drawing.Color.Transparent
+        Me.btnCancel.Font = New System.Drawing.Font("Bookman Old Style", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.Location = New System.Drawing.Point(258, 90)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(96, 33)
+        Me.btnCancel.TabIndex = 3
+        Me.btnCancel.Text = "&Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = False
         '
         'txtPassword
         '
@@ -88,18 +100,6 @@ Partial Class frmLock
         Me.PasswordLabel.TabIndex = 2
         Me.PasswordLabel.Text = "Enter unlock key:"
         Me.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'btnCancel
-        '
-        Me.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnCancel.BackColor = System.Drawing.Color.Transparent
-        Me.btnCancel.Font = New System.Drawing.Font("Bookman Old Style", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.Location = New System.Drawing.Point(258, 90)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(96, 33)
-        Me.btnCancel.TabIndex = 3
-        Me.btnCancel.Text = "&Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = False
         '
         'frmLock
         '

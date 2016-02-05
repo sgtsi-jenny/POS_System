@@ -1,21 +1,22 @@
 ﻿Module MainPanelController
     'Public uscEntry As New Journal_Entry
-    Public uscMainMenu As New MainMenu
+    Public uscMainMenu As New btnBACK
     Public uscInventory As New Inventory
     Public uscTransactions As New pnlPayment
     Public uscUsers As New Users
+    Public uscReports As New Reports
 
-    
+
     Public currentUSC As Control
     Sub clearMainPanel()
-        MainMenu.panelMain.Controls.Clear()
+        btnBACK.panelMain.Controls.Clear()
     End Sub
     Sub showUSC(usc As Control)
         currentUSC = usc
         clearMainPanel()
-        currentUSC.Parent = MainMenu.panelMain
-        currentUSC.Width = MainMenu.panelMain.Width
-        currentUSC.Height = MainMenu.panelMain.Height
+        currentUSC.Parent = btnBACK.panelMain
+        currentUSC.Width = btnBACK.panelMain.Width
+        currentUSC.Height = btnBACK.panelMain.Height
     End Sub
 
     Public posUSC As Control
